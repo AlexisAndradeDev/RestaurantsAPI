@@ -21,7 +21,7 @@ Content-Type: application/json
   "ContactNumber": "321-654-0987",
   "Street": "123 Coffee Lane",
   "City": "San Francisco",
-  "PostalCode": "94102"
+  "PostalCode": "94-102"
 }
 
 ###
