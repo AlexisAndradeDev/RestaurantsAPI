@@ -14,20 +14,4 @@ public class RestaurantDto
     public string? Street { get; set; }
     public string? PostalCode { get; set; }
     public List<DishDto> Dishes { get; set; } = new();
-
-    public static RestaurantDto FromEntity(Restaurant restaurant)
-    {
-        return new RestaurantDto()
-        {
-            Id = restaurant.Id,
-            Name = restaurant.Name,
-            Description = restaurant.Description,
-            Category = restaurant.Category,
-            HasDelivery = restaurant.HasDelivery,
-            City = restaurant.Address?.City,
-            Street = restaurant.Address?.Street,
-            PostalCode = restaurant.Address?.PostalCode,
-            Dishes = restaurant.Dishes.Select(d => DishDto.FromEntity(d)).ToList(),
-        };
-    }
 }
