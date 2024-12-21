@@ -8,3 +8,22 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 GET {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name": "Cafe Delight",
+  "Description": "A charming cafe offering a cozy atmosphere with a variety of coffees and pastries.",
+  "Category": "Cafe",
+  "HasDelivery": false,
+  "ContactEmail": "hello@cafedelight.com",
+  "ContactNumber": "321-654-0987",
+  "Street": "123 Coffee Lane",
+  "City": "San Francisco",
+  "PostalCode": "94102"
+}
+
+###
+
+GET https://localhost:7069/api/restaurants/3
