@@ -11,7 +11,7 @@ public class CreateRestaurantDto
     public bool HasDelivery { get; set; }
     [EmailAddress(ErrorMessage = "Enter a valid email.")]
     public string? ContactEmail { get; set; }
-    [Phone(ErrorMessage = "Enter a valid phone number.")]
+    [RegularExpression(@"^\d{2}-\d{8}", ErrorMessage = "Enter a valid phone number using the following format: XX-XXXXXXXX")]
     public string? ContactNumber { get; set; }
 
     public string? City { get; set; }

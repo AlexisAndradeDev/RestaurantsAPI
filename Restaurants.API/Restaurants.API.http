@@ -15,10 +15,10 @@ Content-Type: application/json
 {
   "Name": "Cafe Delight",
   "Description": "A charming cafe offering a cozy atmosphere with a variety of coffees and pastries.",
-  "Category": "Cafe",
+  "Category": "Japanese",
   "HasDelivery": false,
   "ContactEmail": "hello@cafedelight.com",
-  "ContactNumber": "321-654-0987",
+  "ContactNumber": "32-16540987",
   "Street": "123 Coffee Lane",
   "City": "San Francisco",
   "PostalCode": "94-102"
