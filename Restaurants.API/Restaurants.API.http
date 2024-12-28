@@ -4,7 +4,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-@id=2
+@id=1
 GET {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
 
 ###
@@ -13,7 +13,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "Cafe Delight",
+  "Name": "Cafe 6",
   "Description": "A charming cafe offering a cozy atmosphere with a variety of coffees and pastries.",
   "Category": "Japanese",
   "HasDelivery": false,
@@ -26,4 +26,4 @@ Content-Type: application/json
 
 ###
 
-GET https://localhost:7069/api/restaurants/3
+GET https://localhost:7069/api/restaurants/6
