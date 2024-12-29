@@ -30,4 +30,14 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext): IRestauran
         await dbContext.SaveChangesAsync();
         return restaurant.Id;
     }
+
+    public async Task<bool> Delete(Restaurant restaurant)
+    {
+        var deleted = dbContext.Remove(restaurant);
+        if (deleted is null)
+            return false;
+
+        await dbContext.SaveChangesAsync();
+        return true;
+    }
 }

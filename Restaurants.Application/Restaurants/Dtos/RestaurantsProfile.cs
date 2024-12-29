@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Restaurants.Application.Restaurants.Commands;
+using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Domain.Entities;
 
 namespace Restaurants.Application.Restaurants.Dtos;
