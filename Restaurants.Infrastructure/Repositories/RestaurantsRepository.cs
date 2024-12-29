@@ -31,13 +31,15 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext): IRestauran
         return restaurant.Id;
     }
 
-    public async Task<bool> Delete(Restaurant restaurant)
+    public async Task Delete(Restaurant restaurant)
     {
-        var deleted = dbContext.Remove(restaurant);
-        if (deleted is null)
-            return false;
-
+        dbContext.Remove(restaurant);
         await dbContext.SaveChangesAsync();
-        return true;
+    }
+
+    public async Task Update(Restaurant restaurant)
+    {
+        dbContext.Update(restaurant);
+        await dbContext.SaveChangesAsync();
     }
 }

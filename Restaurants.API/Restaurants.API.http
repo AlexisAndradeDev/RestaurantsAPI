@@ -26,8 +26,19 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/6
+GET {{Restaurants.API_HostAddress}}/api/restaurants/7
 
 ###
 
 DELETE {{Restaurants.API_HostAddress}}/api/restaurants/3
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/7
+Content-Type: application/json
+
+{
+  "Name": "New name",
+  "Description": "New description.",
+  "HasDelivery": true
+}

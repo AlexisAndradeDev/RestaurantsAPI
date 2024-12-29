@@ -15,6 +15,7 @@ public class DeleteRestaurantCommandHandler(ILogger<DeleteRestaurantCommandHandl
         if (restaurant is null)
             return false;
 
-        return await restaurantsRepository.Delete(restaurant);
+        await restaurantsRepository.Delete(restaurant);
+        return true;
     }
 }

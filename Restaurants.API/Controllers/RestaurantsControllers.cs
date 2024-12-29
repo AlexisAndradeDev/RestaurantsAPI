@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Restaurants;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
+using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 using Restaurants.Application.Restaurants.Dtos;
 using Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
 using Restaurants.Application.Restaurants.Queries.GetRestaurant;
@@ -43,9 +44,21 @@ public class RestaurantsControllers(IMediator mediator): ControllerBase
     {
         var deleted = await mediator.Send(new DeleteRestaurantCommand(id));
 
-        if (deleted)
-            return NoContent();
+        if (!deleted)
+            return NotFound();
 
-        return NotFound();
+        return NoContent();
+    }
+
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> UpdateRestaurant([FromRoute] int id, [FromBody] UpdateRestaurantCommand command)
+    {
+        command.Id = id;
+        var updated = await mediator.Send(command);
+
+        if (!updated)
+            return NotFound();
+
+        return NoContent();
     }
 }
