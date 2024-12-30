@@ -26,15 +26,15 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/7
+GET {{Restaurants.API_HostAddress}}/api/restaurants/8
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/3
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/8
 
 ###
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/7
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/8
 Content-Type: application/json
 
 {
