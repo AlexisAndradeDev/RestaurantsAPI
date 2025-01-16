@@ -42,3 +42,17 @@ Content-Type: application/json
   "Description": "New description.",
   "HasDelivery": true
 }
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
+Content-Type: application/json
+
+{
+  "Name": "New dish",
+  "Description": "Description of the new dish.",
+  "Price": 5,
+  "KiloCalories": 100
+}
+
+###
