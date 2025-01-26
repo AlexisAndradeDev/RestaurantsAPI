@@ -45,7 +45,7 @@ Content-Type: application/json
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
+POST {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
 Content-Type: application/json
 
 {
@@ -57,12 +57,15 @@ Content-Type: application/json
 
 ###
 
-@restaurantId=1
-GET {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
 
 ###
 
-@dishId=1
-GET {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes/{{dishId}}
+@dishId=7
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes/{{dishId}}
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
 
 ###
