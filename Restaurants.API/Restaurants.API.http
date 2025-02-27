@@ -1,4 +1,5 @@
 @Restaurants.API_HostAddress = https://localhost:7069
+@token = CfDJ8E2Yvhj5sj9HtH-6gZUqmQKqxrfmujgSWP9jK0C6Kz33p11uSrSlRubebZGy_lFvzeeaHhujcoHADgU3JFaa6h0y-MT4B__uGcNDyE-cH8N62bk0ilQZjN21HTSs-5vNAuyBUFc6rBQy0fNQ53fabw_F31soAoUh6Hc1svZx50Wpl7dPA6nOgKzLZNoBbL8hfwX0XGOLcta08GCUXwxUwD8RHjcRc_74--apG_fBzv0WtE-3-B0yGCKP9KDRY4znypQ5vhUM0Cso_6XbnoHOBq1-uu6x40Fp0NKpzlDnxnkdZkNqKN2YyF23xeDM98dg-CALsRmxhzyeG5bxMyyL-WKrfqNyfElyBzKZ5ZMVrXEHgUVSRM50W2z1YT1w86aUNxfct_U34QSS5XYIRsNyHeQR5oC5bAng-qcSaQATxmRd-S99iehq0AKvjJDS__S3WU9XW8xp-5-q5jk5WCXpWBlzdbKGZe1DDhGRLgRcaMha4xkUy80-kNVwr1YUs_AbpA4lrTy4zYxiYGVKLQ0kyNykksldQyNI-wGXeUmToxxdoLrZ3__U-eU-otgxOkzy_jxN-NDwqpHL0WHnzE0ZlBUYlUHLpRCAeZdCoNfVhpN2ctGFmmRoNflOtOIGomZVUa8Y8qETfk08Z2fYfWn7t5AIzKNhdll4ID_i2VRfAiirZ-ztnRt42qdErw6mjJ0T-z5bCR4ESTVBvfblP-M1x1ueikPs5F_3YHTdTiTO7obImebkgaiLaduCD6D8HgXHv2V-3nKX60YWFqcps_exvAE3fBBS8w_E6bVvuD2WtRtC
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 
@@ -6,14 +7,16 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 @id=1
 GET {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
+Authorization: Bearer {{token}}
 
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "Name": "Cafe 6",
+  "Name": "Cafe 16",
   "Description": "A charming cafe offering a cozy atmosphere with a variety of coffees and pastries.",
   "Category": "Japanese",
   "HasDelivery": false,
@@ -70,19 +73,23 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/register
+POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
-  "password": "Pass1_"
+  "email": "user@test.com",
+  "password": "Password#1"
 }
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/login
+POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 {
-  "email": "test@test.com",
-  "password": "Pass1_"
+  "email": "owner@test.com",
+  "password": "Password#1"
 }
+
+###
+
+
